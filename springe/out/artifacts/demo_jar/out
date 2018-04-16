@@ -1,0 +1,87 @@
+Jar file demo.jar:
+class org/hibernate/validator/internal/engine/ValidatorImpl uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/hibernate/validator/internal/util/annotationfactory/AnnotationFactory uses deprecated method java/lang/reflect/Proxy::getProxyClass(Ljava/lang/ClassLoader;[Ljava/lang/Class;)Ljava/lang/Class; 
+class org/hibernate/validator/internal/metadata/aggregated/PropertyMetaData uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/apache/el/lang/ELArithmetic$BigDecimalDelegate uses deprecated method java/math/BigDecimal::divide(Ljava/math/BigDecimal;I)Ljava/math/BigDecimal; 
+class org/apache/el/lang/ELArithmetic$BigIntegerDelegate uses deprecated method java/math/BigDecimal::divide(Ljava/math/BigDecimal;I)Ljava/math/BigDecimal; 
+class org/apache/el/parser/AstFloatingPoint uses deprecated method java/lang/Double::<init>(Ljava/lang/String;)V 
+class org/apache/el/parser/AstInteger uses deprecated method java/lang/Long::<init>(Ljava/lang/String;)V 
+class org/apache/el/parser/AstNegative uses deprecated method java/lang/Double::<init>(D)V 
+class org/apache/el/parser/AstNegative uses deprecated method java/lang/Float::<init>(F)V 
+class org/yaml/snakeyaml/constructor/Constructor$ConstructScalar uses deprecated method java/lang/Float::<init>(D)V 
+class org/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlFloat uses deprecated method java/lang/Double::<init>(D)V 
+interface org/springframework/asm/Opcodes uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/util/ClassUtils uses deprecated method java/lang/reflect/Proxy::getProxyClass(Ljava/lang/ClassLoader;[Ljava/lang/Class;)Ljava/lang/Class; 
+class org/springframework/util/ReflectionUtils uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/springframework/util/ReflectionUtils uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/springframework/util/ReflectionUtils uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/springframework/cglib/core/CodeEmitter uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/CodeEmitter uses deprecated method java/lang/Long::<init>(J)V 
+class org/springframework/cglib/core/CodeEmitter uses deprecated method java/lang/Float::<init>(F)V 
+class org/springframework/cglib/core/CodeEmitter uses deprecated method java/lang/Double::<init>(D)V 
+class org/springframework/cglib/core/CollectionUtils uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/EmitUtils$1 uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/EmitUtils$13 uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/EmitUtils$14 uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/EmitUtils$2 uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/EmitUtils$3 uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/EmitUtils$4 uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/EmitUtils$5 uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/EmitUtils$6 uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/core/ReflectUtils uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/springframework/cglib/core/ReflectUtils uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/proxy/CallbackHelper uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/proxy/Enhancer uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/proxy/LazyLoaderGenerator uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/proxy/Mixin$Route uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/cglib/reflect/FastClassEmitter$GetIndexCallback uses deprecated method java/lang/Integer::<init>(I)V 
+class org/springframework/objenesis/instantiator/util/ClassDefinitionUtils uses deprecated method sun/misc/Unsafe::defineClass(Ljava/lang/String;[BIILjava/lang/ClassLoader;Ljava/security/ProtectionDomain;)Ljava/lang/Class; (forRemoval=true)
+class com/fasterxml/jackson/databind/deser/std/NumberDeserializers$NumberDeserializer uses deprecated method java/lang/Double::<init>(Ljava/lang/String;)V 
+class com/fasterxml/jackson/databind/introspect/AnnotatedConstructor uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class com/fasterxml/jackson/databind/introspect/AnnotatedField uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class com/fasterxml/jackson/databind/introspect/AnnotatedMethod uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class com/fasterxml/jackson/databind/util/ClassUtil uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/springframework/beans/BeanWrapperImpl$BeanPropertyHandler uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/jboss/logging/JBossLogRecord uses deprecated method java/util/logging/LogRecord::setMillis(J)V 
+class ch/qos/logback/classic/boolex/EvaluatorTemplate uses deprecated method java/lang/Object::finalize()V 
+class ch/qos/logback/classic/gaffer/ComponentDelegate uses deprecated method java/lang/Object::finalize()V 
+class ch/qos/logback/classic/gaffer/ConfigurationDelegate uses deprecated method java/lang/Object::finalize()V 
+class ch/qos/logback/classic/gaffer/GafferConfigurator uses deprecated method java/lang/Object::finalize()V 
+class ch/qos/logback/classic/gaffer/PropertyUtil uses deprecated method java/lang/Object::finalize()V 
+class ch/qos/logback/classic/spi/PackagingDataCalculator uses deprecated method sun/reflect/Reflection::getCallerClass(I)Ljava/lang/Class; (forRemoval=true)
+class org/apache/catalina/core/DefaultInstanceManager uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/apache/catalina/core/DefaultInstanceManager uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/apache/catalina/loader/WebappClassLoaderBase uses deprecated method java/lang/Thread::stop()V 
+class org/apache/catalina/loader/WebappClassLoaderBase uses deprecated method java/lang/ClassLoader::getPackage(Ljava/lang/String;)Ljava/lang/Package; 
+class org/apache/catalina/util/CustomObjectInputStream uses deprecated method java/lang/reflect/Proxy::getProxyClass(Ljava/lang/ClassLoader;[Ljava/lang/Class;)Ljava/lang/Class; 
+class org/apache/naming/factory/DataSourceLinkFactory uses deprecated method java/lang/reflect/Proxy::getProxyClass(Ljava/lang/ClassLoader;[Ljava/lang/Class;)Ljava/lang/Class; 
+class org/apache/tomcat/util/Diagnostics uses deprecated class java/util/logging/LoggingMXBean 
+class org/apache/tomcat/util/Diagnostics uses deprecated method java/util/logging/LogManager::getLoggingMXBean()Ljava/util/logging/LoggingMXBean; 
+class org/apache/tomcat/util/Diagnostics has field named loggingMXBean of deprecated type java/util/logging/LoggingMXBean 
+class org/apache/tomcat/util/http/fileupload/disk/DiskFileItem overrides deprecated method java/lang/Object::finalize()V 
+class org/apache/tomcat/util/net/NioBlockingSelector$KeyReference overrides deprecated method java/lang/Object::finalize()V 
+class org/apache/tomcat/util/net/SSLHostConfig uses deprecated method java/lang/Long::<init>(J)V 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine$OpenSSLSession uses deprecated class javax/security/cert/X509Certificate 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine$OpenSSLSession uses deprecated class javax/security/cert/CertificateException 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine$OpenSSLSession uses deprecated class javax/security/cert/X509Certificate 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine$OpenSSLSession uses deprecated class javax/security/cert/CertificateException 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine$OpenSSLSession has method named getPeerCertificateChain having deprecated return type javax/security/cert/X509Certificate 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine$OpenSSLSession overrides deprecated method javax/net/ssl/SSLSession::getPeerCertificateChain()[Ljavax/security/cert/X509Certificate; 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine uses deprecated method java/lang/Object::finalize()V 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine has field named x509PeerCerts of deprecated type javax/security/cert/X509Certificate 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine overrides deprecated method java/lang/Object::finalize()V 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine has method named access$900 having deprecated return type javax/security/cert/X509Certificate 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine has method named access$902 having deprecated parameter type javax/security/cert/X509Certificate 
+class org/apache/tomcat/util/net/openssl/OpenSSLEngine has method named access$902 having deprecated return type javax/security/cert/X509Certificate 
+class org/springframework/http/converter/xml/Jaxb2RootElementHttpMessageConverter uses deprecated class org/xml/sax/helpers/XMLReaderFactory 
+class org/springframework/http/converter/xml/SourceHttpMessageConverter uses deprecated class org/xml/sax/helpers/XMLReaderFactory 
+class org/springframework/web/util/UrlPathHelper uses deprecated method java/net/URLDecoder::decode(Ljava/lang/String;)Ljava/lang/String; 
+class org/springframework/expression/spel/support/ReflectivePropertyAccessor$OptimalPropertyAccessor uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/springframework/expression/spel/support/ReflectivePropertyAccessor$OptimalPropertyAccessor uses deprecated method java/lang/reflect/AccessibleObject::isAccessible()Z 
+class org/springframework/boot/BeanDefinitionLoader uses deprecated method java/lang/Package::getPackage(Ljava/lang/String;)Ljava/lang/Package; 
+class ch/qos/logback/core/joran/spi/ConfigurationWatchList uses deprecated method java/net/URLDecoder::decode(Ljava/lang/String;)Ljava/lang/String; 
+class ch/qos/logback/core/joran/util/StringToObjectConverter uses deprecated method java/lang/Integer::<init>(Ljava/lang/String;)V 
+class ch/qos/logback/core/joran/util/StringToObjectConverter uses deprecated method java/lang/Long::<init>(Ljava/lang/String;)V 
+class ch/qos/logback/core/joran/util/StringToObjectConverter uses deprecated method java/lang/Float::<init>(Ljava/lang/String;)V 
+class ch/qos/logback/core/joran/util/StringToObjectConverter uses deprecated method java/lang/Double::<init>(Ljava/lang/String;)V 
+class ch/qos/logback/core/rolling/helper/FileFilterUtil uses deprecated method java/lang/Integer::<init>(Ljava/lang/String;)V 
