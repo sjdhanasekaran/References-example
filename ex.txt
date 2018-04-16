@@ -1,0 +1,53 @@
+
+import java.util.*;
+import java.io.*;
+import java.lang.String;
+class Ad{
+    String name;
+    String kb;
+    String date;
+    public Ad(String name,String kb,String date) {
+        this.name = name;
+        this.kb=kb;
+        this.date=date;
+    }
+    @Override
+    public String toString() {
+        return String.format("%s %s %s", name, kb, date);
+    }
+}
+
+public class Solution {
+    public static void main(String[] args)throws IOException {
+        ArrayList<Ad> l = new ArrayList<>();
+        ArrayList<Ad> l1 = new ArrayList<>();
+        ArrayList<Ad>temp=new ArrayList<>();
+
+        File f = new File("C:\\Users\\dje\\Documents\\image\\source.txt");
+        Scanner s = new Scanner(f);
+
+        while (s.hasNextLine()) {
+            String[] Split = s.nextLine().split(" ");
+            l.add(new Ad(Split[0], Split[1], Split[2]));
+
+        }
+s.close();
+        File f1 = new File("C:\\Users\\dje\\Documents\\target\\target.txt");
+        Scanner s1 = new Scanner(f1);
+
+        while (s1.hasNextLine()) {
+            String[] Split = s1.nextLine().split(" ");
+            l1.add(new Ad(Split[0], Split[1], Split[2]));
+        }
+        s1.close();
+        for (Ad a : l) {
+            for (Ad aa : l1) {
+                if ((aa.name.equals(a.name))) {
+                  temp.add(new Ad(aa.name,aa.kb,aa.date));
+                }
+            }
+        }
+System.out.println(temp);
+    }
+
+    }

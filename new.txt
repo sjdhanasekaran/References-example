@@ -1,0 +1,93 @@
+/*
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Ad2{
+    String fname;
+    public Ad2(String fname) {
+        this.fname = fname;
+    }
+}
+public class Cmd {
+    static String[] exten = new String[]{"jar"};
+    static final FilenameFilter filter = new FilenameFilter() {
+        public boolean accept(File dir, String name) {
+            for (final String ext : exten) {
+                if (name.endsWith("." + ext)) {
+                    return (true);
+                }
+            }
+            return (false);
+        }
+    };
+    public static void main(String[] args) throws Exception {
+
+        String location="C:\\Users\\dje\\Documents\\o.txt";
+        PrintWriter pw=new PrintWriter(location);
+       */
+/* pw.append("TESTED JAR FILES"+",");
+        pw.append("ERRORS"+",");
+        pw.append("DEPRECATION");*//*
+
+
+        File dir = new File("C:\\Users\\dje\\Documents\\jar\\");
+        File[] ff = dir.listFiles(filter);
+
+        for (int i = 0; i < ff.length; i++) {
+       */
+/*     pw.println();*//*
+
+            ArrayList<Ad1> a=new ArrayList<>();
+            int count=0;
+            ProcessBuilder b= new ProcessBuilder("jdeprscan",ff[i].getName());
+            b.directory(new File("C:\\Users\\dje\\Documents\\jar\\"));
+            File f= new File("C:\\Users\\dje\\Documents\\Input.txt");
+            if(!(f.exists())){
+                f.createNewFile();
+            }
+            b.redirectError(new File("C:\\Users\\dje\\Documents\\Input.txt"));
+            Process p=  b.start();
+            BufferedReader br1 = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+            Scanner sc=new Scanner(p.getInputStream());
+        */
+/*    pw.print(ff[i].getName()+",");*//*
+
+            while ((sc.hasNextLine()))
+            {
+        String ss=sc.nextLine();
+
+           System.out.println(ss);
+              */
+/*  String[] Split = sc.nextLine().split(" ");
+                if(Split[0].equals("class"))
+                {
+                    a.add(new Ad1(Split[5]));
+                    count++;
+                }
+                else if(Split[0].equals("interface"))
+                {
+                    a.add(new Ad1(Split[5]));
+                    count++;
+                }*//*
+
+            }
+          */
+/*  for(int j=1;j<a.size();j++) {
+                pw.print(j+") " + a.get(i));
+            }
+            if(count==0){
+                System.out.println(","+"***No Deprecation***");
+            }*//*
+
+
+
+            br1.close();
+        }
+        pw.close();
+        pw.flush();
+    }
+}
+
+*/

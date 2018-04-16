@@ -1,0 +1,101 @@
+
+import java.util.*;
+class fruitClass {
+    String name;
+    String type;
+    String regionname;
+    String seeds;
+    public fruitClass(String name, String type, String regionname, String seeds) {
+        this.name = name;
+        this.type = type;
+        this.regionname = regionname;
+        this.seeds = seeds;
+    }
+    /*public String getName()
+    {
+        return name;
+    }
+    public void setName(String name)
+    {
+        this.name = name;
+    }*/
+    public String getType()
+    {
+        return type;
+    }
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+    /* //public String getRegionName()
+     {
+         return regionname;
+     }
+     public void setRegionName(String regionname)
+     {
+         this.regionname = regionname;
+     }
+     public String getSeeds()
+     {
+         return seeds;
+     }
+     public void setSeeds(String seeds)
+     {
+         this.seeds = seeds;
+     }*/
+    @Override
+    public String toString() {
+        return String.format("Name:%s Type:%s", name, type);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final fruitClass other = (fruitClass) obj;
+        if ((!Objects.equals(this.name, other.name)) && (!Objects.equals(this.type, other.type)) && (!Objects.equals(this.regionname, other.regionname)) && (!Objects.equals(this.seeds, other.seeds))) {
+            return false;
+        }
+        return true;
+    }
+}
+
+public class groupmymethod {
+    public static void main(String[] args) {
+        List<fruitClass> ll = new ArrayList<>();
+        ll.add(new fruitClass("apple", "fruit", "hillregion", "multi"));
+        ll.add(new fruitClass("blueberry", "berry", "field", "multi"));
+        ll.add(new fruitClass("custardapple", "fruit", "field", "multi"));
+        ll.add(new fruitClass("dates", "fruit", "field", "single"));
+        ll.add(new fruitClass("gooseberry", "berry", "field", "single"));
+        ll.add(new fruitClass("jackfruit", "fruit", "hillregion", "single"));
+        ll.add(new fruitClass("kiwi", "fruit", "field", "multi"));
+        ll.add(new fruitClass("mango", "fruit", "field", "single"));
+        ll.add(new fruitClass("orange", "fruit", "hillregion", "multi"));
+        ll.add(new fruitClass("peach", "berry", "hillregion", "multi"));
+        ll.add(new fruitClass("rasberry", "berry", "field", "multi"));
+        ll.add(new fruitClass("strawberry", "berry", "field", "multi"));
+        ll.add(new fruitClass("watermelon", "berry", "field", "multi"));
+        for (fruitClass f : ll) {
+            System.out.println(f);
+        }
+
+        Map<String, List<fruitClass>> groupbytype = new HashMap<>();
+        for (fruitClass r : ll) {
+            if (!groupbytype.containsKey(r.getType())) {
+                groupbytype.put(r.getType(), new ArrayList<>());
+            }
+            groupbytype.get(r.getType()).add(r);
+
+
+        }
+        System.out.println("Group by type : " + groupbytype);
+
+
+
+    }
+}

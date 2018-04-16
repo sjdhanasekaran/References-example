@@ -1,0 +1,133 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.counting;
+
+public class groups {
+    public static void main(String[] args) {
+        List<fruit> ll = new ArrayList<>();
+        ll.add(new fruit("apple", "fruit", "hillregion", "multi"));
+        ll.add(new fruit("blueberry", "berry", "field", "multi"));
+        ll.add(new fruit("custardapple", "fruit", "field", "multi"));
+        ll.add(new fruit("dates", "fruit", "field", "single"));
+        ll.add(new fruit("gooseberry", "berry", "field", "single"));
+        ll.add(new fruit("jackfruit", "fruit", "hillregion", "single"));
+        ll.add(new fruit("kiwi", "fruit", "field", "multi"));
+        ll.add(new fruit("mango", "fruit", "field", "single"));
+        ll.add(new fruit("orange", "fruit", "hillregion", "multi"));
+        ll.add(new fruit("peach", "berry", "hillregion", "multi"));
+        ll.add(new fruit("rasberry", "berry", "field", "multi"));
+        ll.add(new fruit("strawberry", "berry", "field", "multi"));
+        ll.add(new fruit("watermelon", "berry", "field", "multi"));
+        for (fruit f : ll) {
+            System.out.println(f);
+        }
+
+
+
+        /*  for (fruit r : ll) {
+           if (!groupbytype.containsKey(r.getType())) {
+                groupbytype.put(r.getType(), new ArrayList<>());
+            }
+                groupbytype.get(r.getType()).add(r);
+        }
+        System.out.println("Group by type : " + groupbytype);*/
+        Map<String, List<fruit>> groupbytype =  ll.stream()
+                .collect(Collectors.groupingBy(fruit::getType));
+        System.out.println("Person grouped by type: "
+                + groupbytype);
+
+        Map<String, Long> groupbytypecount = ll.stream().
+                collect(Collectors.groupingBy(fruit::getType, counting()));
+        System.out.println("Counts After grouped by type: "
+                + groupbytypecount);
+       /* Map<String, List<fruit>> groupbyregion = new HashMap<>();
+
+        for (fruit s : ll) {
+            final int i;
+            if (!groupbyregion.containsKey(s.getRegionName())) {
+                groupbyregion.put(s.getRegionName(), new ArrayList<>());
+            }
+           groupbyregion.get(s.getRegionName()).add(s);
+            i= groupbyregion.get(s.getRegionName()).size();System.out.print(i);
+        }
+
+        System.out.println("Group by region: " + groupbyregion);
+
+        Map<String, List<fruit>> groupbyseeds = new HashMap<>();
+        for (fruit s : ll) {
+            if (!groupbyseeds.containsKey(s.getSeeds())) {
+                groupbyseeds.put(s.getSeeds(),new ArrayList<>());
+            }
+            groupbyseeds.get(s.getSeeds()).add(s);
+        }
+
+        System.out.println("Group by Seedtype: " + groupbyseeds);*/
+    }
+}
+class fruit {
+    String name;
+    String type;
+    String regionname;
+    String seeds;
+    public fruit(String name, String type, String regionname, String seeds) {
+        this.name = name;
+        this.type = type;
+        this.regionname = regionname;
+        this.seeds = seeds;
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    public String getType()
+    {
+        return type;
+    }
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+    public String getRegionName()
+    {
+        return regionname;
+    }
+    public void setRegionName(String regionname)
+    {
+        this.regionname = regionname;
+    }
+    public String getSeeds()
+    {
+        return seeds;
+    }
+    public void setSeeds(String seeds)
+    {
+        this.seeds = seeds;
+    }
+    @Override
+    public String toString() {
+        return String.format("Name:%s Type:%s RegionName:%s Seeds:%s", name, type,regionname,seeds);
+    }
+
+  /*  @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final fruit other = (fruit) obj;
+        if( (!Objects.equals(this.name, other.name))&& (!Objects.equals(this.type, other.type))&&(!Objects.equals(this.regionname, other.regionname))&&(!Objects.equals(this.seeds, other.seeds))){
+            return false;
+        }
+        return true;
+    }*/
+}

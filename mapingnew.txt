@@ -1,0 +1,117 @@
+import java.util.*;
+
+enum MyEnum {
+    APPLE("red"),
+    BANANA("yellow"),
+    GUAVA("green"),
+    PLUMS("red"),
+    AVOCADO("green"),
+    POMEGRANATE("red"),
+    JACKFRUIT("green"),
+    STRAWBERRY("red");
+    public String colorName;
+    MyEnum(String colorName)
+    {
+        this.colorName=colorName;
+
+    }
+     public String getColorName()
+     { return colorName;
+     }
+    }
+
+public class GroupBy {
+    public static void main(String[] args) {
+          /*  Map<String, List<MyEnum>> map = new HashMap<>();
+
+            for (MyEnum myenum : MyEnum.values()) {
+                List<MyEnum> enumKeyList = map.get(myenum.getGroupName());
+                if (enumKeyList == null) {
+                    enumKeyList = new ArrayList<>();
+                    map.put(myenum.groupName, enumKeyList);
+                }
+                enumKeyList.add(myenum);
+            }
+            System.out.println(map);*/
+        Map<String, List<MyEnum>> map = new HashMap<>();
+        for (MyEnum myenum : MyEnum.values()) {
+            if (!map.containsKey(myenum.getColorName())) {
+                map.put(myenum.getColorName(), new ArrayList<>());
+            }
+            map.get(myenum.getColorName()).add(myenum);
+        }
+        for (Map.Entry m : map.entrySet()) {
+            System.out.println(m.getKey() + " " + m.getValue());
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////
+
+Double variable
+
+import java.util.*;
+
+enum MyEnum {
+    APPLE("red","medium"),
+    BANANA("yellow","large"),
+    GUAVA("green","medium"),
+    PLUMS("red","small"),
+    AVOCADO("green","large"),
+    POMEGRANATE("red","small"),
+    JACKFRUIT("green","large"),
+    STRAWBERRY("red","small");
+    public String colorName;
+    public String Size;
+
+    MyEnum(String colorName,String Size) {
+        this.colorName = colorName;
+        this.Size = Size;
+    }
+    public String getColorName() {
+        return colorName;
+    }  public String getSize() {
+        return Size;
+    }
+
+}
+public class GroupBy {
+    public static void main(String[] args) {
+
+        Map<String, List<MyEnum>> map = new HashMap<>();
+        for (MyEnum myenum : MyEnum.values()) {
+            if (!map.containsKey(myenum.getColorName())) {
+                map.put(myenum.getColorName(), new ArrayList<>());
+            }
+            map.get(myenum.getColorName()).add(myenum);
+        }
+        for (Map.Entry m : map.entrySet()) {
+            System.out.println(m.getKey() + " " + m.getValue());
+        }
+        Map<String, List<MyEnum>> map1 = new HashMap<>();
+        for (MyEnum myenum : MyEnum.values()) {
+            if (!map1.containsKey(myenum.getSize())) {
+                map1.put(myenum.getSize(), new ArrayList<>());
+            }
+            map1.get(myenum.getSize()).add(myenum);
+        }
+        for (Map.Entry m1 : map1.entrySet()) {
+            System.out.println(m1.getKey() + " " + m1.getValue());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,295 @@
+////////////////////////////////////////////////////
+****************************************************
+
+import javax.xml.soap.Detail;
+import java.io.FileWriter;
+ import java.io.*;
+import java.text.*;
+ import java.util.ArrayList;
+ import java.util.List;
+
+ class Add{
+     String name;
+    /* Double kb;
+     String date;*/
+     public Add(String name) {
+         this.name = name;
+         /*this.kb=kb;
+         this.date=date;*/
+     }
+      }
+
+ public class Images {
+     public static void main(String[] args) {
+         File file = new File("C:\\Users\\dje\\Documents\\image\\sachin.png");
+         SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+         ;
+
+
+      /*   double bytes = file.length();
+         double kb = (bytes / 1024);*/
+         String name = file.getName();
+         List<Add> detail = new ArrayList<>();
+         detail.add(new Add(name));
+         System.out.println("Name: " + name);
+       /*  System.out.println("Image Size: " + kb + " Kb");
+         System.out.println("Modified Date: " + date.format(file.lastModified()));*/
+
+         try{
+             FileWriter fw=new FileWriter("D:\\testout.txt");
+             fw.write();
+             fw.close();
+         }catch(Exception e){System.out.println(e);}
+         System.out.println("Success...");
+     }
+
+ }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+public class Images {
+    public class Add {
+        String name;
+        Float kb;
+        String date;
+
+        public Add(String name, Float kb, String date) {
+            this.name = name;
+            this.kb = kb;
+            this.date = date;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("Name: %s  Size: %f Kb Modified Date: %s", name, kb, date);
+        }
+    }
+
+    public void writer(ArrayList<Add> datArrayList) throws IOException {
+
+        PrintWriter pw = null;
+        FileOutputStream fo = null;
+        File file = null;
+        try {
+            file = new File("C:\\Users\\dje\\Documents\\image\\text.txt");
+            pw = new PrintWriter(new FileOutputStream(file));
+            fo = new FileOutputStream(file);
+            int datList = datArrayList.size();
+            for (int i = 0; i < datList; i++) {
+                pw.write(datArrayList.get(i).toString() + "\n");
+            }
+        } finally {
+            pw.flush();
+            pw.close();
+            fo.close();
+        }
+
+    }
+
+    public static void main(String args[]) {
+        File dir = new File("C:\\Users\\dje\\Documents\\image\\");
+        if (dir.isDirectory()) {
+            for (File f : dir.listFiles()) {
+                SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+                float bytes = f.length();
+                float kb = (bytes / 1024);
+                String name = f.getName();
+                Images Writer = new Images();
+                ArrayList<Add> datArrayList = new ArrayList<Add>();
+                datArrayList.add(Writer.new Add(name, kb, date.format(f.lastModified())));
+                try {
+                    Writer.writer(datArrayList);
+                    System.out.println("Finished");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+    }
+}
+ 
+/////////////////////////////////////////////////////////////////////////////////////////////
+*********************************************************************************************
+
+
+        import java.io.File;
+        import java.io.FileNotFoundException;
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+        import java.io.PrintWriter;
+        import java.util.ArrayList;
+        import java.util.List;
+
+public class Accounts {
+
+    public class Account {
+
+        String name;
+        String amount;
+
+        public Account(String name, String amount) {
+            super();
+            this.name = name;
+            this.amount = amount;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getAmount() {
+            return amount;
+        }
+
+        public void setAmount(String amount) {
+            this.amount = amount;
+        }
+
+        public String toString() {
+            return this.getName() + ", " + this.getAmount();
+        }
+
+    }
+
+    public  void writer(ArrayList<Account> datArrayList) throws IOException {
+
+        PrintWriter pw = null;
+        FileOutputStream fo = null;
+        File file = null;
+        try {
+            file = new File("C:\\Users\\dje\\Documents\\image\\text.txt");
+            pw = new PrintWriter(new FileOutputStream(file));
+            fo = new FileOutputStream(file);
+            int datList = datArrayList.size();
+            for (int i = 0; i < datList; i++) {
+                pw.write(datArrayList.get(i).toString() + "\n");
+            }
+        } finally {
+            pw.flush();
+            pw.close();
+            fo.close();
+        }
+
+    }
+
+    public static void main(String args[]) {
+        Accounts Writer = new Accounts();
+        ArrayList<Account> datArrayList = new ArrayList<Account>();
+        Account account = Writer.new Account(" Name" , " 100000");
+        datArrayList.add(account);
+
+        try {
+            Writer.writer(datArrayList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////
+8888888888888888888888888888888888888888888888888888888888888888888888
+*********************************************************************
+
+
+
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+public class Images {
+class Add {
+    String name;
+    Float kb;
+    String date;
+
+    public Add(String name, Float kb, String date) {
+        this.name = name;
+        this.kb = kb;
+        this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s  Size: %f Kb Modified Date: %s", name, kb, date);
+    }
+}
+
+    static File dir = new File("C:\\Users\\dje\\Documents\\image\\");
+
+
+    static  String[] exten = new String[]
+            {"png"};
+
+    static final FilenameFilter IMAGE_FILTER = new FilenameFilter(){
+    public boolean accept(File dir, String name) {
+        for (final String ext : exten) {
+            if (name.endsWith("." + ext)) {
+                return (true);
+            }
+        }
+        return (false);
+    }};
+    public static void main(String args[]) {
+        if (dir.isDirectory()) {
+            for (File f : dir.listFiles(IMAGE_FILTER)) {
+                BufferedImage img = null;
+                try {
+                    img = ImageIO.read(f);
+                    SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+                    float bytes = f.length();
+                    float kb = (bytes / 1024);
+                    String name = f.getName();
+                    Images Writer = new Images();
+                    ArrayList<Add> detail = new ArrayList<>();
+                    detail.add(Writer.new Add(name, kb, date.format(f.lastModified())));
+                    try {
+                        Writer.writer(detail);
+                        System.out.println("Finished");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                } catch (IOException e) {
+
+                }
+
+            }
+        }
+    }
+public void writer(ArrayList<Add> detail) throws IOException {
+        PrintWriter pw = null;
+        FileOutputStream fo = null;
+        File file  = new File("C:\\Users\\dje\\Documents\\image\\text.txt");
+        try {
+
+            pw = new PrintWriter(new FileOutputStream(file));
+            fo = new FileOutputStream(file);
+            int detail1 = detail.size();
+            for (int i = 0; i < detail1; i++) {
+                pw.write(detail.get(i).toString() + "\n");
+            }
+        } finally {
+            pw.flush();
+            pw.close();
+            fo.close();
+        }
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////
+********************************************************************

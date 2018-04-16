@@ -1,0 +1,159 @@
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Solution {
+    public static void main(String[] args) throws Exception {
+        Scanner s = new Scanner(System.in);
+        int t = s.nextInt();
+       
+        for (int it=1;it<=t;it++) {
+            int n = s.nextInt();
+        int[] r = new int[n * n];
+
+
+            int x = 0;
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= n; j++) {
+                    r[x] = i + j;
+                    x++;
+                }
+
+            }
+            for (int i = 0; i < (n * n); i++) {
+                System.out.println(r[i]);
+            }
+
+            int dia = 0;
+
+            for (int i = 0; i < (n * n); i++) {
+                int count = 0, sum = 0, sum1 = 0;
+                while (r[i] > 0) {
+                    int digit = r[i] % 10;
+                    if (count % 2 == 0) {
+                        sum = sum + digit;
+                    } else {
+                        sum1 = sum1 + digit;
+                    }
+                    count++;
+                    r[i] = r[i] / 10;
+                }
+                int d = sum - sum1;
+                if (d < 0) {
+                    d = d * -1;
+                }
+                dia = dia + d;
+
+            }
+            System.out.println( dia);
+        }
+
+    }
+}
+
+
+///////////////////////////////////////////////////
+
+
+        import java.util.Scanner;
+
+class Solution {
+    public static void main(String[] args) throws Exception {
+        Scanner s = new Scanner(System.in);
+        BigInteger t = s.nextBigInteger();
+BigInteger it=BigInteger.valueOf(1);
+BigInteger itr=it;
+        while ((itr.compareTo(t))<=0)
+        {
+            BigInteger n = s.nextBigInteger();
+            BigInteger e=n.multiply(n);
+            BigInteger[] r =  new BigInteger[e.intValue()];
+
+            BigInteger x = it.subtract(it);
+            for (BigInteger i =it; (i.compareTo(n))<=0; i=i.add(it)) {
+                for (BigInteger j =it;(j.compareTo(n))<=0; j=j.add(it)) {
+                    r[x.intValue()] = i.add(j);
+                    x=x.add(it);
+                }
+
+            }
+
+           BigInteger dia = BigInteger.ZERO;
+
+            for (BigInteger i =it.subtract(it); (i.compareTo(e))<0; i=i.add(it)) {
+                BigInteger count =BigInteger.ZERO;
+                BigInteger sum = BigInteger.ZERO;
+                BigInteger sum1 =BigInteger.ZERO;
+                while (r[i.intValue()].compareTo(BigInteger.ZERO)>0 ) {
+                    BigInteger digit = r[i.intValue()].mod(BigInteger.TEN);
+                    if ((count.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO))) {
+                        sum = (sum.add(digit) );
+                    } else {
+                        sum1 = sum1 .add(digit) ;
+                    }
+                    count=count.add(BigInteger.ONE);
+                    r[i.intValue()] = r[i.intValue()] .divide(BigInteger.TEN);
+                }
+                BigInteger d = sum.subtract(sum1) ;
+                if (d.compareTo(BigInteger.ZERO) < 0) {
+                    d = d.multiply((BigInteger.valueOf(-1))) ;
+                }
+                dia = dia.add(d) ;
+
+            }
+            System.out.println("the diamond is" + dia);
+            itr=itr.add(it);
+        }
+
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+class Edit {
+    public static void main(String[] args) throws Exception {
+        Scanner s = new Scanner(System.in);
+        BigInteger t = s.nextBigInteger();
+
+        for(BigInteger u=BigInteger.ZERO;u.compareTo(t)<0;u=u.add(BigInteger.ONE))
+        {
+            BigInteger n = s.nextBigInteger();
+            BigInteger e=n.multiply(n);
+            BigInteger[] r =  new BigInteger[e.intValue()];
+            BigInteger x = BigInteger.ZERO;
+            for (BigInteger i =BigInteger.ONE; (i.compareTo(n))<=0; i=i.add(BigInteger.ONE)) {
+                for (BigInteger j =BigInteger.ONE;(j.compareTo(n))<=0; j=j.add(BigInteger.ONE)) {
+                    r[x.intValue()] = i.add(j);
+                    x=x.add(BigInteger.ONE);
+                }            }
+            BigInteger dia = BigInteger.ZERO;
+            for (BigInteger i =BigInteger.ZERO; (i.compareTo(e))<0; i=i.add(BigInteger.ONE)) {
+                BigInteger count =BigInteger.ZERO;
+                BigInteger sum = BigInteger.ZERO;
+                BigInteger sum1 =BigInteger.ZERO;
+                while (r[i.intValue()].compareTo(BigInteger.ZERO)>0 ) {
+                    BigInteger digit = r[i.intValue()].mod(BigInteger.TEN);
+                    if ((count.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO))) {
+                        sum = (sum.add(digit) );
+                    } else {
+                        sum1 = sum1 .add(digit) ;
+                    }
+                    count=count.add(BigInteger.ONE);
+                    r[i.intValue()] = r[i.intValue()] .divide(BigInteger.TEN);
+                }
+                BigInteger d = sum.subtract(sum1) ;
+                if (d.compareTo(BigInteger.ZERO) < 0) {
+                    d = d.multiply((BigInteger.valueOf(-1))) ;
+                }
+                dia = dia.add(d) ;
+            }
+            System.out.println(dia);
+        }
+
+    }
+}
