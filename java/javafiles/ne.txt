@@ -1,0 +1,1 @@
+Successfully registered new external service of type db with serviceId db0000000000.

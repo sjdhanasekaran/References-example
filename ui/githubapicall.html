@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html >
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-touch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="script.js"></script>
+<style>
+  </style>
+</head>
+
+  <body>
+<div class="container" ng-app="myapp" ng-controller="mycontrol">
+  <div class="row">
+    <input type="text" class="form-control" ng-model="username">
+    <input type="submit" value="get" class="btn btn-success" ng-click="loader()">
+    <div class="col-md-3">
+<div class="card">
+  <img class="card-img-top" ng-src="{{userData.avatar_url}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{userData.login }}</h5>
+  <!-- <a href="#!/more" class="btn btn-primary">More Info</a> -->
+</div>
+  </div>
+</div>
+{{userData}}
+</div>
+  </div>
+<!-- <div class="container" ng-app="myapp" ng-controller="mycontrol">
+  <input type="text" ng-model="username">
+  <input type="submit" ng-click="loader()">
+  <h1 class="text-center">
+    <span />{{userData.name}}</span>
+    <br>
+    <a href="{{userData.html_url}}" class="btn btn-default">
+        <span class="octicon octicon-octoface"></span>
+        {{userData.login}}
+    </a>
+</h1>
+</div> -->
+  </body>
+  </html>
+<script>
+
+/*angular.module('myapp', [])
+.controller('mycontrol', ['$scope','$http', function($scope,$http) {
+ delete $http.defaults.headers.common['X-Requested-With'];
+$scope.username = "pdsullivan";
+$scope.loader=function(){
+  $http({
+            method: 'GET',
+            url: "https://api.github.com/users/"+$scope.username,
+            headers: {'Authorization': 'Token access_token=0b892a384d645a8abea64f24ee5fc6b297d1059a'}
+         })
+        .then(function(response) {
+            $scope.userData = response.data;
+        });
+}
+
+}]);*/
+
+var app=angular.module('myapp',[]);
+
+app.controller('mycontrol',['$scope','$http',function($scope,$http) {
+
+$scope.username ='';
+$scope.loader=function(){
+if($scope.username!='' && (angular.isDefined($scope.username))){
+  $http.get("https://api.github.com/users/"+$scope.username)
+        .then(function(response) {
+            $scope.userData = response.data;
+        });
+}else{
+  
+}
+}
+}]);
+
+
+</script>
